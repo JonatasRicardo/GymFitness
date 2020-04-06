@@ -101,5 +101,21 @@ public class AlunoDAO {
             throw new RuntimeException("Erro 5: "+erro);
         }
         return lista;
+    }
+                     public ArrayList<Aluno> listarNome() {
+        String sql = "SELECT aluno_nome from aluno";
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(sql);
+            while (rs.next()) {
+                Aluno aluno = new Aluno();
+                aluno.setNome(rs.getString("aluno_nome"));
+                lista.add(aluno);
+            }
+            
+        } catch (Exception erro) {
+            throw new RuntimeException("Erro 5: "+erro);
+        }
+        return lista;
     }    
 }
