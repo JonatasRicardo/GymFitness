@@ -59,7 +59,8 @@ public class AulaGrupoView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         tfSala = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Aulas");
 
         tbAulaGrupo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/view/AlunoView.java</file>
-            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/dao/AlunoDAO.java</file>
-            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/dao/ConnectionFactory.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/view/PrincipalView.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/view/LoginView.java</file>
             <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/main/Run.java</file>
-            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/table/AlunoTableModel.java</file>
-            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/model/Aluno.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/view/InstrutorView.java</file>
         </group>
     </open-files>
 </project-private>

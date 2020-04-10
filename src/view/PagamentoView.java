@@ -54,7 +54,8 @@ public class PagamentoView extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         tfProximoPagamento = new javax.swing.JFormattedTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Pagamento");
 
         jLabel1.setText("Código:");
 

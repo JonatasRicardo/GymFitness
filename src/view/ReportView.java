@@ -26,7 +26,8 @@ public class ReportView extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         btGerarReport = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Relatório");
 
         tbReport.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

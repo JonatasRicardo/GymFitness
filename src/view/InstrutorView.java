@@ -47,7 +47,8 @@ public class InstrutorView extends javax.swing.JFrame {
         tfPesquisarNome = new javax.swing.JTextField();
         cjTipoAtividade = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Instrutor");
 
         jLabel1.setText("Código:");
 
