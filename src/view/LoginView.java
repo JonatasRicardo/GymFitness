@@ -1,9 +1,9 @@
 package view;
 
 import dao.LoginDAO;
-import dao.LoginTipoDAO;
+import dao.TipoLoginDAO;
 import javax.swing.JOptionPane;
-import model.LoginTipo;
+import model.TipoLogin;
 
 public class LoginView extends javax.swing.JFrame {
     
@@ -12,9 +12,9 @@ public class LoginView extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-        LoginTipoDAO dao = new LoginTipoDAO();
+        TipoLoginDAO dao = new TipoLoginDAO();
         
-        for (LoginTipo t: dao.listar()) {
+        for (TipoLogin t: dao.buscarTodos()) {
             cjTipoUsuario.addItem(t);
         }
     }
@@ -110,7 +110,7 @@ public class LoginView extends javax.swing.JFrame {
 
     private void btAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAcessarActionPerformed
     LoginDAO dao = new LoginDAO();
-    if (dao.checkUsuario(tfUsuario.getText(), tfSenha.getText(), cjTipoUsuario.getSelectedItem().toString())) {
+    if (dao.checkLogin(tfUsuario.getText(), tfSenha.getText(), cjTipoUsuario.getSelectedItem().toString())) {
         new PrincipalView(tfUsuario.getText(),cjTipoUsuario.getSelectedItem().toString()).setVisible(true);
         this.dispose();
     } else {

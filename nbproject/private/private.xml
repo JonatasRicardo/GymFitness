@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/view/PrincipalView.java</file>
-            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/view/LoginView.java</file>
-            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/main/Run.java</file>
-            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/view/InstrutorView.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/dao/DiaSemanaDAO.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/model/Pagamento.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/model/Aula.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/dao/PagamentoDAO.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/dao/AulaDAO.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/model/DiaSemana.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/view/PagamentoView.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/dao/TipoPlanoDAO.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/view/AulaGrupoView.java</file>
+            <file>file:/C:/Users/thais/Documents/NetBeansProjects/Gym/src/model/TipoPlano.java</file>
         </group>
     </open-files>
 </project-private>

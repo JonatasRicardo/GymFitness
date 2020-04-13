@@ -13,6 +13,7 @@ public class AlunoDAO {
     private PreparedStatement stmt;
     private Statement st;
     private ResultSet rs;
+    boolean check = false;
     private ArrayList<Aluno> lista = new ArrayList<Aluno>();
     
     public AlunoDAO() {
@@ -82,7 +83,7 @@ public class AlunoDAO {
         return lista;
     }
         
-            public ArrayList<Aluno> listarTodosNome(String valor) {
+            public ArrayList<Aluno> pesquisarPorNome(String valor) {
         String sql = "SELECT * from aluno WHERE aluno_nome LIKE '%"+valor+"%'";
         try {
             st = conn.createStatement();
@@ -102,7 +103,7 @@ public class AlunoDAO {
         }
         return lista;
     }
-                     public ArrayList<Aluno> listarNome() {
+        public ArrayList<Aluno> listarNome() {
         String sql = "SELECT aluno_nome from aluno";
         try {
             st = conn.createStatement();

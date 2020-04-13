@@ -22,7 +22,7 @@ public class PagamentoView extends javax.swing.JFrame {
         TipoPlanoDAO dao = new TipoPlanoDAO();
         
         
-        for (TipoPlano t: dao.listar()) {
+        for (TipoPlano t: dao.buscarTodos()) {
             cjTipoPlano.addItem(t);
         }
         

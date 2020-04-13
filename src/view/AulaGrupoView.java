@@ -1,28 +1,28 @@
 package view;
 
-import dao.AulaGrupoDAO;
+import dao.AulaDAO;
 import dao.DiaSemanaDAO;
 import dao.InstrutorDAO;
 import javax.swing.JOptionPane;
-import model.AulaGrupo;
+import model.Aula;
 import model.DiaSemana;
 import model.Instrutor;
 import table.AulaGrupoTableModel;
 
 public class AulaGrupoView extends javax.swing.JFrame {
     
-    AulaGrupo aus = new AulaGrupo();
-    AulaGrupoDAO aust = new AulaGrupoDAO();
+    Aula aus = new Aula();
+    AulaDAO aust = new AulaDAO();
 
     public AulaGrupoView() {
         initComponents();
         setLocationRelativeTo(null);
-        tbAulaGrupo.setModel(new AulaGrupoTableModel(new AulaGrupoDAO().listar()));
+        tbAulaGrupo.setModel(new AulaGrupoTableModel(new AulaDAO().listar()));
         btExcluir.setEnabled(false);
         
         DiaSemanaDAO dao = new DiaSemanaDAO();
         
-        for (DiaSemana t: dao.listar()) {
+        for (DiaSemana t: dao.buscarTodos()) {
             jcDiaSemana.addItem(t);
         }
         
@@ -243,7 +243,7 @@ public class AulaGrupoView extends javax.swing.JFrame {
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         btExcluir.setEnabled(false);
-        tbAulaGrupo.setModel(new AulaGrupoTableModel(new AulaGrupoDAO().listar()));
+        tbAulaGrupo.setModel(new AulaGrupoTableModel(new AulaDAO().listar()));
         tfCodigo.setText("");
         tfNomeAula.setText("");
         jcDiaSemana.setSelectedIndex(0);
@@ -259,7 +259,7 @@ public class AulaGrupoView extends javax.swing.JFrame {
         if (escolha == 0) {
         int codigo  = Integer.parseInt(tfCodigo.getText());
         aust.excluir(codigo);
-        tbAulaGrupo.setModel(new AulaGrupoTableModel(new AulaGrupoDAO().listar()));
+        tbAulaGrupo.setModel(new AulaGrupoTableModel(new AulaDAO().listar()));
         tfCodigo.setText("");
         tfNomeAula.setText("");
         jcDiaSemana.setSelectedIndex(0);
@@ -295,7 +295,7 @@ public class AulaGrupoView extends javax.swing.JFrame {
             aust.alterar(aus);
             btExcluir.setEnabled(false);
         }
-        tbAulaGrupo.setModel(new AulaGrupoTableModel(new AulaGrupoDAO().listar()));
+        tbAulaGrupo.setModel(new AulaGrupoTableModel(new AulaDAO().listar()));
         tfCodigo.setText("");
         tfNomeAula.setText("");
         jcDiaSemana.setSelectedIndex(0);
@@ -321,7 +321,7 @@ public class AulaGrupoView extends javax.swing.JFrame {
 
     private void tfPesquisarNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPesquisarNomeKeyPressed
         String pesquisa = tfPesquisarNome.getText();
-        tbAulaGrupo.setModel(new AulaGrupoTableModel(new AulaGrupoDAO().listarTodosNome(pesquisa)));
+        tbAulaGrupo.setModel(new AulaGrupoTableModel(new AulaDAO().pesquisarPorNome(pesquisa)));
     }//GEN-LAST:event_tfPesquisarNomeKeyPressed
 
     public static void main(String args[]) {

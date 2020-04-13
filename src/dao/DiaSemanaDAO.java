@@ -19,7 +19,7 @@ public class DiaSemanaDAO {
         conn = new ConnectionFactory().getConexao();
     }
 
-    public ArrayList<DiaSemana> listar() {
+    public ArrayList<DiaSemana> buscarTodos() {
         String sql = "SELECT * from diasemana";
         try {
             st = conn.createStatement();

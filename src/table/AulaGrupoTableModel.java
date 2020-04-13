@@ -2,7 +2,7 @@ package table;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
-import model.AulaGrupo;
+import model.Aula;
 
 public class AulaGrupoTableModel extends AbstractTableModel{
     public static final int COL_AULAGRUPO_ID = 0;
@@ -12,10 +12,10 @@ public class AulaGrupoTableModel extends AbstractTableModel{
     public static final int COL_AULAGRUPO_SALA = 4;
     public static final int COL_AULAGRUPO_HORARIOINICIO = 5;
     public static final int COL_AULAGRUPO_HORARIOFIM = 6;
-    public ArrayList<AulaGrupo> lista;
+    public ArrayList<Aula> lista;
     
-    public AulaGrupoTableModel(ArrayList<AulaGrupo>l) {
-        lista = new ArrayList<AulaGrupo>(l);
+    public AulaGrupoTableModel(ArrayList<Aula>l) {
+        lista = new ArrayList<Aula>(l);
     }    
 
     @Override
@@ -30,7 +30,7 @@ public class AulaGrupoTableModel extends AbstractTableModel{
 
     @Override
     public Object getValueAt(int linhas, int colunas) {
-    AulaGrupo aulagrupo = lista.get(linhas);
+    Aula aulagrupo = lista.get(linhas);
     if (colunas == COL_AULAGRUPO_ID) return aulagrupo.getId();
     if (colunas == COL_AULAGRUPO_NOME) return aulagrupo.getNome();
     if (colunas == COL_AULAGRUPO_NOMEINSTRUTOR) return aulagrupo.getNomeInstrutor();

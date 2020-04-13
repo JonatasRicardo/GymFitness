@@ -5,30 +5,30 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import model.TipoPlano;
+import model.TipoLogin;
 
-public class TipoPlanoDAO {
+public class TipoLoginDAO {
 
     private Connection conn;
     private PreparedStatement stmt;
     private Statement st;
     private ResultSet rs;
-    private ArrayList<TipoPlano> lista = new ArrayList<TipoPlano>();
+    private ArrayList<TipoLogin> lista = new ArrayList<TipoLogin>();
 
-    public TipoPlanoDAO() {
+    public TipoLoginDAO() {
         conn = new ConnectionFactory().getConexao();
     }
 
-    public ArrayList<TipoPlano> buscarTodos() {
-        String sql = "SELECT * from tipoplano";
+    public ArrayList<TipoLogin> buscarTodos() {
+        String sql = "SELECT * from logintipo";
         try {
             st = conn.createStatement();
             rs = st.executeQuery(sql);
             while (rs.next()) {
-                TipoPlano tipoplano = new TipoPlano();
-                tipoplano.setId(rs.getInt("tipoplano_id"));
-                tipoplano.setDescricao(rs.getString("tipoplano_descricao"));
-                lista.add(tipoplano);
+                TipoLogin logintipo = new TipoLogin();
+                logintipo.setId(rs.getInt("logintipo_id"));
+                logintipo.setDescricao(rs.getString("logintipo_descricao"));
+                lista.add(logintipo);
             }
 
         } catch (Exception erro) {

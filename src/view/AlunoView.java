@@ -58,32 +58,10 @@ public class AlunoView extends javax.swing.JFrame {
 
         tfCodigo.setEditable(false);
         tfCodigo.setBackground(new java.awt.Color(255, 204, 204));
-        tfCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCodigoActionPerformed(evt);
-            }
-        });
 
-        tfPesquisarNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfPesquisarNomeActionPerformed(evt);
-            }
-        });
         tfPesquisarNome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfPesquisarNomeKeyPressed(evt);
-            }
-        });
-
-        tfNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfNomeActionPerformed(evt);
-            }
-        });
-
-        tfEndereco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfEnderecoActionPerformed(evt);
             }
         });
 
@@ -213,39 +191,25 @@ public class AlunoView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfCodigoActionPerformed
-
-    private void tfPesquisarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPesquisarNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfPesquisarNomeActionPerformed
-
-    private void tfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfNomeActionPerformed
-
-    private void tfEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfEnderecoActionPerformed
-
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-        if (tfNome.getText().equals("") || tfIdentidade.getText().equals("") || tfEndereco.getText().equals("") || tfCPF.getText().equals("")) {
+        if (tfNome.getText().equals("") || tfIdentidade.getText().equals("  .   .   - ") || tfEndereco.getText().equals("") || tfCPF.getText().equals("   .   .   -  ")) {
             JOptionPane.showMessageDialog(null,"Há campos em branco, verifique e tente novamente!","Aluno - Aviso",JOptionPane.WARNING_MESSAGE);
-        } else {       
-        if(tfCodigo.getText().equals("")) {
-            alu.setNome(tfNome.getText());
-            alu.setIdentidade(tfIdentidade.getText());
-            alu.setEndereco(tfEndereco.getText());
-            alu.setCpf(tfCPF.getText());
-            aln.registrar(alu);
         } else {
-            alu.setNome(tfNome.getText());
-            alu.setIdentidade(tfIdentidade.getText());
-            alu.setEndereco(tfEndereco.getText());
-            alu.setCpf(tfCPF.getText());     
-            alu.setId(Integer.parseInt(tfCodigo.getText()));
-            aln.alterar(alu);
+                if(tfCodigo.getText().equals("")) {
+                alu.setNome(tfNome.getText());
+                alu.setIdentidade(tfIdentidade.getText());
+                alu.setEndereco(tfEndereco.getText());
+                alu.setCpf(tfCPF.getText());
+                aln.registrar(alu);
+                JOptionPane.showMessageDialog(null, "O aluno foi cadastrado com sucesso!");
+            } else {
+                alu.setNome(tfNome.getText());
+                alu.setIdentidade(tfIdentidade.getText());
+                alu.setEndereco(tfEndereco.getText());
+                alu.setCpf(tfCPF.getText());     
+                alu.setId(Integer.parseInt(tfCodigo.getText()));
+                aln.alterar(alu);
+                JOptionPane.showMessageDialog(null, "O aluno foi alterado com sucesso!");
         }
         tbAluno.setModel(new AlunoTableModel(new AlunoDAO().listar()));
         tfCodigo.setText("");
@@ -270,6 +234,7 @@ public class AlunoView extends javax.swing.JFrame {
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         btExcluir.setEnabled(false);
+        btSalvar.setEnabled(true);
         tbAluno.setModel(new AlunoTableModel(new AlunoDAO().listar()));
         tfCodigo.setText("");
         tfNome.setText("");
@@ -298,7 +263,7 @@ public class AlunoView extends javax.swing.JFrame {
     private void tfPesquisarNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPesquisarNomeKeyPressed
         
         String pesquisa = tfPesquisarNome.getText();
-        tbAluno.setModel(new AlunoTableModel(new AlunoDAO().listarTodosNome(pesquisa)));
+        tbAluno.setModel(new AlunoTableModel(new AlunoDAO().pesquisarPorNome(pesquisa)));
     }//GEN-LAST:event_tfPesquisarNomeKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

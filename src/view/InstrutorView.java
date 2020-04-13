@@ -113,11 +113,6 @@ public class InstrutorView extends javax.swing.JFrame {
 
         jLabel6.setText("Pesquisar (Nome):");
 
-        tfPesquisarNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfPesquisarNomeActionPerformed(evt);
-            }
-        });
         tfPesquisarNome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfPesquisarNomeKeyPressed(evt);
@@ -217,6 +212,7 @@ public class InstrutorView extends javax.swing.JFrame {
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         btExcluir.setEnabled(false);
+        btSalvar.setEnabled(true);
         tbInstrutor.setModel(new InstrutorTableModel(new InstrutorDAO().listar()));
         tfCodigo.setText("");
         tfNome.setText("");
@@ -243,7 +239,7 @@ public class InstrutorView extends javax.swing.JFrame {
     }//GEN-LAST:event_btExcluirActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-        if (tfNome.getText().equals("") || tfIdentidade.getText().equals("") || tfCPF.getText().equals("")) {
+        if (tfNome.getText().equals("") || tfIdentidade.getText().equals("  .   .   - ") || tfCPF.getText().equals("   .   .   -  ")) {
             JOptionPane.showMessageDialog(null,"Há campos em branco, verifique e tente novamente!","Instrutor - Aviso",JOptionPane.WARNING_MESSAGE);
         } else {       
         if(tfCodigo.getText().equals("")) {
@@ -252,6 +248,7 @@ public class InstrutorView extends javax.swing.JFrame {
             inst.setCpf(tfCPF.getText());
             inst.setTipoAtividade(cjTipoAtividade.getSelectedItem().toString());
             ins.registrar(inst);
+            JOptionPane.showMessageDialog(null, "O instrutor foi cadastrado com sucesso!");
         } else {
             inst.setNome(tfNome.getText());
             inst.setIdentidade(tfIdentidade.getText());
@@ -259,6 +256,7 @@ public class InstrutorView extends javax.swing.JFrame {
             inst.setTipoAtividade(cjTipoAtividade.getSelectedItem().toString());
             inst.setId(Integer.parseInt(tfCodigo.getText()));
             ins.alterar(inst);
+            JOptionPane.showMessageDialog(null, "O instrutor foi alterado com sucesso!");
         }
         tbInstrutor.setModel(new InstrutorTableModel(new InstrutorDAO().listar()));
         tfCodigo.setText("");
@@ -280,13 +278,9 @@ public class InstrutorView extends javax.swing.JFrame {
         cjTipoAtividade.setSelectedItem(tbInstrutor.getValueAt(tbInstrutor.getSelectedRow(), InstrutorTableModel.COL_INSTRUTOR_TIPOATIVIDADE).toString());
     }//GEN-LAST:event_tbInstrutorMouseClicked
 
-    private void tfPesquisarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPesquisarNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfPesquisarNomeActionPerformed
-
     private void tfPesquisarNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPesquisarNomeKeyPressed
         String pesquisa = tfPesquisarNome.getText();
-        tbInstrutor.setModel(new InstrutorTableModel(new InstrutorDAO().listarTodosNome(pesquisa)));
+        tbInstrutor.setModel(new InstrutorTableModel(new InstrutorDAO().pesquisarPorNome(pesquisa)));
     }//GEN-LAST:event_tfPesquisarNomeKeyPressed
 
     public static void main(String args[]) {

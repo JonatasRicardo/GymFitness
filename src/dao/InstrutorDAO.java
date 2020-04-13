@@ -82,7 +82,7 @@ public class InstrutorDAO {
         return lista;
     }
         
-            public ArrayList<Instrutor> listarTodosNome(String valor) {
+            public ArrayList<Instrutor> pesquisarPorNome(String valor) {
         String sql = "SELECT * from instrutor WHERE instrutor_nome LIKE '%"+valor+"%'";
         try {
             st = conn.createStatement();

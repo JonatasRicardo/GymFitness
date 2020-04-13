@@ -141,7 +141,7 @@ public class PrincipalView extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         LoginDAO dao = new LoginDAO();
-        dao.checkTipoUsuario(jlTipo.getText());
+        dao.checkTipoLogin(jlTipo.getText());
         if (jlTipo.getText().equals("gerente")) {
             new ReportView().setVisible(true);
         } else {

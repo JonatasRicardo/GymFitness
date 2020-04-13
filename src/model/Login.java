@@ -4,7 +4,7 @@ public class Login {
     private int id;
     private String usuario;
     private String senha;
-    private String tipousuario;
+    private String tipologin;
 
     public int getId() {
         return id;
@@ -30,12 +30,12 @@ public class Login {
         this.senha = senha;
     }
 
-    public String getTipousuario() {
-        return tipousuario;
+    public String getTipologin() {
+        return tipologin;
     }
 
-    public void setTipousuario(String tipousuario) {
-        this.tipousuario = tipousuario;
+    public void setTipologin(String tipologin) {
+        this.tipologin = tipologin;
     }
     
     
