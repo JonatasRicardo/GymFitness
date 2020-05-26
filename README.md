@@ -13,6 +13,8 @@ Este projeto é referente ao TCC do curso de pós graduação de Engenharia de S
 # Informações da implementação
 - Fazer o restore do banco de dados, utilizando o PgAdmin 4. 
 - Arquivo disponível em: https://github.com/thais-cunha/GymFitness/blob/master/database/gymfitness_database
+- Nome do servidor: postgres
+- Porta: 5432
 - Usuário: postgres
 - Senha: admin
 
