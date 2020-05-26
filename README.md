@@ -9,3 +9,7 @@ Este projeto é referente ao TCC do curso de pós graduação de Engenharia de S
 - Java JDK 7
 - Java JDK 8
 - Jasper Reports 6.1.0
+
+# Informações da implementação
+- Fazer o restore do banco de dados, utilizando o PgAdmin 4. 
+- Arquivo disponível em: https://github.com/thais-cunha/GymFitness/blob/master/database/gymfitness_database
