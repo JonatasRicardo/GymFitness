@@ -1,6 +1,6 @@
 package view;
 
-import dao.LoginDAO;
+import dao.FuncionarioDAO;
 import javax.swing.JOptionPane;
 
 public class PrincipalView extends javax.swing.JFrame {
@@ -140,8 +140,8 @@ public class PrincipalView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        LoginDAO dao = new LoginDAO();
-        dao.checkTipoLogin(jlTipo.getText());
+        FuncionarioDAO dao = new FuncionarioDAO();
+        dao.checkTipoFuncionario(jlTipo.getText());
         if (jlTipo.getText().equals("gerente")) {
             new ReportView().setVisible(true);
         } else {

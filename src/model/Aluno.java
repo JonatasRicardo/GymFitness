@@ -1,6 +1,6 @@
 package model;
 
-public class Aluno extends Pessoa {
+public class Aluno extends Funcionario {
 
     private String endereco;
 

@@ -41,7 +41,7 @@ public class PagamentoTableModel extends AbstractTableModel{
 
     @Override
     public String getColumnName(int colunas) {
-    if (colunas == COL_PAGAMENTO_ID) return "Códdigo";
+    if (colunas == COL_PAGAMENTO_ID) return "Código";
     if (colunas == COL_PAGAMENTO_TIPOPLANO) return "Tipo do Plano";
     if (colunas == COL_PAGAMENTO_NOMEALUNO) return "Nome do Aluno";
     if (colunas == COL_PAGAMENTO_DATAVENCIMENTO) return "Data de Vencimento";

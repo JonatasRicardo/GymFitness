@@ -1,6 +1,6 @@
 package model;
 
-public class Instrutor extends Pessoa{
+public class Instrutor extends Funcionario{
     private String tipoAtividade;
 
     public String getTipoAtividade() {
